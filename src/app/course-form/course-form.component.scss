@@ -1,0 +1,19 @@
+.course-form {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 32px;
+
+    mat-form-field{
+        flex:1;
+    }
+
+    div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        mat-checkbox {
+            margin-bottom: 24px;
+        }
+    }
+}

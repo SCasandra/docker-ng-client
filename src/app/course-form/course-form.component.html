@@ -1,0 +1,51 @@
+<form [formGroup]="courseForm" class="course-form">
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput 
+             formControlName="description">
+      <mat-error>This field is required</mat-error>
+    </mat-form-field>
+ 
+      <mat-form-field appearance="outline">
+        <mat-label>Lessons Count</mat-label>
+        <input matInput type="number"
+               formControlName="lessonsCount">
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+ 
+      <mat-form-field appearance="outline">
+        <mat-label>Category</mat-label>
+        <input matInput
+               placeholder="Beginner/Advanced"
+               formControlName="category">
+        <mat-error>Invalid format</mat-error>
+      </mat-form-field>
+ 
+      <mat-form-field appearance="outline">
+        <mat-label>Seq no</mat-label>
+        <input matInput type="number"
+               formControlName="seqNo">
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+   
+  <div>
+      <mat-checkbox formControlName="promo">
+        <span> Promo </span>
+      </mat-checkbox>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="longDescription" [rows]="5"></textarea>
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+  
+    <button type="submit"
+            [disabled]="courseForm.invalid"
+            mat-flat-button
+            (click)="onSubmit()">
+      Submit
+    </button>
+    </div>
+  </form>
+  
