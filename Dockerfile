@@ -2,6 +2,12 @@ ARG NODE_VERSION=20
 
 # Multi-stage build
 
+FROM node:${NODE_VERSION}-alpine AS dev-stage
+
+WORKDIR /app
+
+ENTRYPOINT ["npm","run", "start"]
+
 FROM node:${NODE_VERSION}-alpine AS build
 
 WORKDIR /usr/src/app
